@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina con Pulsante</title>
+</head>
+<body>
+
+  <h1>Benvenuto sulla pagina con pulsante! asfdpòaosjfoaifhwseof</h1>
+
+  <!-- Un pulsante semplice -->
+  <button onclick="mostraMessaggio()">Clicca qui</button>
+
+  <!-- Uno spazio per visualizzare il messaggio -->
+  <p id="messaggio"></p>
+
+  <!-- Script JavaScript per gestire il pulsante -->
+  <script>
+    function mostraMessaggio() {
+      // Cambia il testo del paragrafo con l'id "messaggio" quando il pulsante viene cliccato
+      document.getElementById("messaggio").innerHTML = "Hai cliccato sul pulsante!";
+    }
+  </script>
+
+</body>
+</html>
