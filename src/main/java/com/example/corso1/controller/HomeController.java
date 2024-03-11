@@ -5,7 +5,6 @@ package com.example.corso1.controller;
 import com.example.corso1.SommaDTO;
 import com.example.corso1.entity.Ragazze;
 import com.example.corso1.repository.RagazzaRepository;
-import com.theokanning.openai.service.OpenAiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +33,6 @@ public class HomeController {
         ragazzaRepository.save(ragazza01);
 */
 
-        OpenAiService service = new OpenAiService("your_token");
         return "<h1> ci sono " + counter + " ragazze nel bordello </h1> ";
     }
 
