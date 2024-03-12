@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
-@RequestMapping ("/rest")
+@RequestMapping ("/rest/ragazze")
 @CrossOrigin (origins = "*")
 public class RagazzeController {
     @Autowired
     private RagazzaRepository ragazzeService;
 
-    @GetMapping (path = "/ragazze")
+    @GetMapping (path = "/")
     public List<Ragazze> ragazze(){
         List<Ragazze> listaRagazze = new ArrayList<>();
         Iterable<Ragazze> iterable =ragazzeService.findAll();

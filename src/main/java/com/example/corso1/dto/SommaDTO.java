@@ -1,4 +1,4 @@
-package com.example.corso1;
+package com.example.corso1.dto;
 
 public class SommaDTO {
     int x;

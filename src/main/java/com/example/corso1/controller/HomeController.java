@@ -2,7 +2,7 @@
 
 package com.example.corso1.controller;
 
-import com.example.corso1.SommaDTO;
+import com.example.corso1.dto.SommaDTO;
 import com.example.corso1.entity.Ragazze;
 import com.example.corso1.repository.RagazzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +26,10 @@ public class HomeController {
                       counter.getAndIncrement();
                   }
           );
-      /*  int counter = 0;
-        Ragazze ragazza01 = new Ragazze();
-        ragazza01.setName("Luisa");
-        ragazza01.setId(2020L);
-        ragazzaRepository.save(ragazza01);
-*/
-
-        return "<h1> ci sono " + counter + " ragazze nel bordello </h1> ";
+          return "<h1> ci sono " + counter + " ragazze nel bordello </h1> ";
     }
 
+   // @GetMapping (path = )
     @PostMapping(path = "somma")
     public int somma(@RequestBody SommaDTO dto) {
         return (dto.getX() + dto.getY());
