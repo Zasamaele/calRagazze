@@ -17,11 +17,9 @@ import java.util.List;
 @CrossOrigin (origins = "*")
 public class CharacterController {
     @Autowired
-
     private CharacterRepository characterService;
 
     @GetMapping(path = "/")
-
     public List<Character> characters() {
         List<Character> listCharacter = new ArrayList<>();
         Iterable<Character> iterable = characterService.findAll();
