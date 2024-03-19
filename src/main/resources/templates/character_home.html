@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabella con dati dall'API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Dati dall'API</h2>
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>STATISTIC</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: "http://localhost:8080/rest/character/find_all",
+            method: "GET",
+            dataType: "json",
+            success: function(data){
+                // Costruzione della tabella con i dati ottenuti dall'API
+                var tableBody = $('#dataTable tbody');
+                $.each(data, function(index, user){
+                    var row = '<tr>' +
+                                '<td>' + user.id + '</td>' +
+                                '<td>' + user.name + '</td>' +
+                                '<td>' + user.statistic + '</td>' +
+                              '</tr>';
+                    tableBody.append(row);
+                });
+            },
+            error: function(xhr, status, error){
+                console.error(status + ": " + error);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
