@@ -26,7 +26,6 @@
 <table id="dataTable">
     <thead>
     <tr>
-        <th>ID</th>
         <th>Nome</th>
         <th>STATISTIC</th>
     </tr>
@@ -45,7 +44,7 @@
                 var tableBody = $('#dataTable tbody');
                 $.each(data, function(index, user){
                     var row = '<tr>' +
-                                '<td>' + user.id + '</td>' +
+
                                 '<td>' + user.name + '</td>' +
                                 '<td>' + user.statistic + '</td>' +
                               '</tr>';

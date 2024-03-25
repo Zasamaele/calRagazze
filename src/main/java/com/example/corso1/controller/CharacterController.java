@@ -1,7 +1,7 @@
 package com.example.corso1.controller;
 
 
-import com.example.corso1.entity.Character;
+import com.example.corso1.entity.Character_data;
 import com.example.corso1.repository.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +18,9 @@ public class CharacterController {
     private CharacterRepository characterRepository;
 
     @GetMapping(path = "/find_all")
-    public List<Character> characters() {
-        List<Character> listCharacter = new ArrayList<>();
-        Iterable<Character> iterable = characterRepository.findAll();
+    public List<Character_data> characters() {
+        List<Character_data> listCharacter = new ArrayList<>();
+        Iterable<Character_data> iterable = characterRepository.findAll();
         iterable.forEach(
                 r -> {
                     listCharacter.add(r);
@@ -30,8 +30,8 @@ public class CharacterController {
     }
 
     @GetMapping (path = "/find")
-    public Optional<Character> find(@RequestParam int id){
-        Optional<Character> character = characterRepository.findById(id);
+    public Optional<Character_data> find(@RequestParam int id){
+        Optional<Character_data> character = characterRepository.findById(id);
         return character;
     }
 }

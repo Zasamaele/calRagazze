@@ -8,14 +8,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table (name = "character_data")
-public class Character {
+public class Character_data {
     @Id
     @Column(name="id")
     private int Id;
     private String name;
     private  double statistic;
 
-    public Character(){
+    public Character_data(){
 
     }
 
