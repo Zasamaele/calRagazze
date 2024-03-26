@@ -2,6 +2,7 @@ package com.example.corso1.controller;
 
 import com.example.corso1.entity.Item;
 import com.example.corso1.repository.ItemRepository;
+import org.antlr.v4.runtime.atn.PredictionContextCache;
 import org.apache.el.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,10 +22,9 @@ public class ItemController {
     public List<Item> items() {
         List<Item> itemList = new ArrayList<>();
         Iterable<Item> Iterable = itemRepository.findAll();
-        Stream iterable;
         iterable.forEach(
                 r -> {
-                    listItem.add(r);
+                    itemList.add(r);
                 }
         );
         return itemList;
