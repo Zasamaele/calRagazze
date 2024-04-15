@@ -21,7 +21,7 @@ public class ItemController {
     @GetMapping(path = "/all_item")
     public List<Item> items() {
         List<Item> itemList = new ArrayList<>();
-        Iterable<Item> Iterable = itemRepository.findAll();
+        Iterable<Item> iterable = itemRepository.findAll();
         iterable.forEach(
                 r -> {
                     itemList.add(r);
@@ -31,7 +31,7 @@ public class ItemController {
     }
     @GetMapping(path = "item")
     public Optional<Item> find (@RequestParam int id){
-        Optional<Item> item = ItemRepository.findById(id);
+        Optional<Item> item = itemRepository.findById(id);
         return  item;
     }
 }
